@@ -1,0 +1,39 @@
+-> create_database({'name': 'retail_sales'}) = Created database DEMO_OCT_31_RETAIL_SALES
+-> create_database({'name': 'hospital_scheduling'}) = Created database DEMO_OCT_31_HOSPITAL_SCHEDULING
+-> create_database({'name': 'cell_phone_usage'}) = Created database DEMO_OCT_31_CELL_PHONE_USAGE
+-> run_sql({'database': 'demo_oct_31_retail_sales', 'statement': 'create table public.products (product_id integer, product_name string, category string, price numeric(10, 2))'}) = [["Table PRODUCTS successfully created."]]
+-> run_sql({'database': 'demo_oct_31_hospital_scheduling', 'statement': 'create table public.doctors (doctor_id integer, doctor_name string, specialty string)'}) = [["Table DOCTORS successfully created."]]
+-> run_sql({'database': 'demo_oct_31_cell_phone_usage', 'statement': 'create table public.countries (country_id integer, country_name string, country_code string)'}) = [["Table COUNTRIES successfully created."]]
+-> run_sql({'database': 'demo_oct_31_retail_sales', 'statement': 'create table public.orders (order_id integer, customer_id integer, product_id integer, quantity integer, order_date date)'}) = [["Table ORDERS successfully created."]]
+-> run_sql({'database': 'demo_oct_31_hospital_scheduling', 'statement': 'create table public.patients (patient_id integer, patient_name string, date_of_birth date)'}) = [["Table PATIENTS successfully created."]]
+-> run_sql({'database': 'demo_oct_31_cell_phone_usage', 'statement': 'create table public.usage_statistics (statistic_id integer, country_id integer, month string, data_usage_gb numeric(10, 2))'}) = [["Table USAGE_STATISTICS successfully created."]]
+-> run_sql({'database': 'demo_oct_31_retail_sales', 'statement': 'create table public.customers (customer_id integer, customer_name string, join_date date, email string)'}) = [["Table CUSTOMERS successfully created."]]
+-> run_sql({'database': 'demo_oct_31_hospital_scheduling', 'statement': 'create table public.appointments (appointment_id integer, patient_id integer, doctor_id integer, appointment_date date, status string)'}) = [["Table APPOINTMENTS successfully created."]]
+-> run_sql({'database': 'demo_oct_31_cell_phone_usage', 'statement': 'create table public.subscriptions (subscription_id integer, country_id integer, plan_type string, monthly_cost numeric(10, 2))'}) = [["Table SUBSCRIPTIONS successfully created."]]
+-> run_sql({'database': 'demo_oct_31_retail_sales', 'statement': "insert into public.products (product_id, product_name, category, price) values (1, 'Laptop', 'Electronics', 999.99), (2, 'Smartphone', 'Electronics', 699.99), (3, 'Coffee Maker', 'Home Appliances', 49.99), (4, 'Headphones', 'Accessories', 199.99), (5, 'Espresso Machine', 'Home Appliances', 299.99), (6, 'Washing Machine', 'Home Appliances', 399.99), (7, 'Blender', 'Kitchen', 89.99), (8, 'Microwave', 'Kitchen', 149.99), (9, 'Vacuum Cleaner', 'Home Appliances', 179.99), (10, 'Smart Watch', 'Wearables', 249.99)"}) = [[10]]
+-> run_sql({'database': 'demo_oct_31_hospital_scheduling', 'statement': "insert into public.doctors (doctor_id, doctor_name, specialty) values (1, 'Dr. Smith', 'Cardiology'), (2, 'Dr. Jones', 'Orthopedics'), (3, 'Dr. Adams', 'Neurology'), (4, 'Dr. Brown', 'Pediatrics'), (5, 'Dr. Clark', 'Dermatology'), (6, 'Dr. Lewis', 'Oncology'), (7, 'Dr. Walker', 'Endocrinology'), (8, 'Dr. Hall', 'Gastroenterology'), (9, 'Dr. Allen', 'General Surgery'), (10, 'Dr. Young', 'Urology')"}) = [[10]]
+-> run_sql({'database': 'demo_oct_31_cell_phone_usage', 'statement': "insert into public.countries (country_id, country_name, country_code) values (1, 'Brazil', 'BR'), (2, 'Argentina', 'AR'), (3, 'Colombia', 'CO'), (4, 'Chile', 'CL'), (5, 'Peru', 'PE'), (6, 'Venezuela', 'VE'), (7, 'Ecuador', 'EC'), (8, 'Bolivia', 'BO'), (9, 'Paraguay', 'PY'), (10, 'Uruguay', 'UY')"}) = [[10]]
+-> run_sql({'database': 'demo_oct_31_retail_sales', 'statement': "insert into public.orders (order_id, customer_id, product_id, quantity, order_date) values (1, 101, 1, 2, '2023-10-01'), (2, 102, 3, 1, '2023-10-05'), (3, 103, 4, 4, '2023-10-08'), (4, 104, 6, 3, '2023-10-10'), (5, 105, 2, 1, '2023-10-12'), (6, 106, 5, 2, '2023-10-15'), (7, 107, 7, 5, '2023-10-18'), (8, 108, 8, 1, '2023-10-20'), (9, 109, 10, 1, '2023-10-22'), (10, 110, 9, 2, '2023-10-25')"}) = [[10]]
+-> run_sql({'database': 'demo_oct_31_hospital_scheduling', 'statement': "insert into public.patients (patient_id, patient_name, date_of_birth) values (101, 'Alice Johnson', '1990-05-15'), (102, 'Bob Smith', '1985-07-20'), (103, 'Carol White', '2000-12-05'), (104, 'David Brown', '1975-01-30'), (105, 'Emma Davis', '1995-09-12'), (106, 'Frank Wilson', '1980-04-25'), (107, 'Grace Taylor', '1998-11-15'), (108, 'Henry Miller', '1992-08-22'), (109, 'Ivy Anderson', '1987-03-18'), (110, 'Jack Thomas', '1991-06-30')"}) = [[10]]
+-> run_sql({'database': 'demo_oct_31_cell_phone_usage', 'statement': "insert into public.usage_statistics (statistic_id, country_id, month, data_usage_gb) values (1, 1, 'October', 15.2), (2, 2, 'October', 10.5), (3, 3, 'October', 18.1), (4, 4, 'October', 9.7), (5, 5, 'October', 13.3), (6, 6, 'October', 11.4), (7, 7, 'October', 14.8), (8, 8, 'October', 7.9), (9, 9, 'October', 12.2), (10, 10, 'October', 9.0)"}) = [[10]]
+-> run_sql({'database': 'demo_oct_31_retail_sales', 'statement': "insert into public.customers (customer_id, customer_name, join_date, email) values (101, 'John Doe', '2021-01-15', 'johndoe@example.com'), (102, 'Jane Smith', '2022-05-20', 'janesmith@example.com'), (103, 'Emily Davis', '2020-03-10', 'emilydavis@example.com'), (104, 'Michael Brown', '2019-08-25', 'michaelbrown@example.com'), (105, 'Sarah Johnson', '2021-11-13', 'sarahjohnson@example.com'), (106, 'David Wilson', '2022-02-18', 'davidwilson@example.com'), (107, 'Chris Martin', '2022-06-05', 'chrismartin@example.com'), (108, 'Jessica Taylor', '2020-09-30', 'jessicataylor@example.com'), (109, 'Daniel Anderson', '2019-12-14', 'danielanderson@example.com'), (110, 'Laura Thompson', '2021-03-22', 'laurathompson@example.com')"}) = [[10]]
+-> run_sql({'database': 'demo_oct_31_hospital_scheduling', 'statement': "insert into public.appointments (appointment_id, patient_id, doctor_id, appointment_date, status) values (1, 101, 2, '2023-11-01', 'Scheduled'), (2, 102, 4, '2023-11-05', 'Completed'), (3, 103, 6, '2023-11-08', 'Scheduled'), (4, 104, 1, '2023-11-10', 'Cancelled'), (5, 105, 3, '2023-11-12', 'Scheduled'), (6, 106, 5, '2023-11-15', 'Completed'), (7, 107, 7, '2023-11-18', 'Scheduled'), (8, 108, 9, '2023-11-20', 'Completed'), (9, 109, 8, '2023-11-22', 'Scheduled'), (10, 110, 10, '2023-11-25', 'Scheduled')"}) = [[10]]
+-> run_sql({'database': 'demo_oct_31_cell_phone_usage', 'statement': "insert into public.subscriptions (subscription_id, country_id, plan_type, monthly_cost) values (1, 1, 'Unlimited', 30.0), (2, 2, 'Basic', 15.0), (3, 3, 'Premium', 25.0), (4, 4, 'Basic', 15.0), (5, 5, 'Unlimited', 30.0), (6, 6, 'Premium', 25.0), (7, 7, 'Basic', 15.0), (8, 8, 'Unlimited', 30.0), (9, 9, 'Premium', 25.0), (10, 10, 'Basic', 15.0)"}) = [[10]]
+I've successfully created three demo databases with their respective tables and inserted relevant data into each:
+
+1. **Retail Sales Database (`demo_oct_31_retail_sales`)**:
+   - **Products Table**: 10 product entries.
+   - **Orders Table**: 10 order entries.
+   - **Customers Table**: 10 customer entries.
+
+2. **Hospital Scheduling Database (`demo_oct_31_hospital_scheduling`)**:
+   - **Doctors Table**: 10 doctor entries.
+   - **Patients Table**: 10 patient entries.
+   - **Appointments Table**: 10 appointment entries.
+
+3. **Cell Phone Usage Database (`demo_oct_31_cell_phone_usage`)**:
+   - **Countries Table**: 10 country entries.
+   - **Usage Statistics Table**: 10 data usage entries.
+   - **Subscriptions Table**: 10 subscription entries. 
+
+Each database and table has been populated with realistic data entries as requested.
